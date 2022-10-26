@@ -26,7 +26,7 @@ createUser(email, password)
   form.reset()
   console.log(user)
   setError('')
-  handleUpdateUserProfile(name, photoURL);
+  // handleUpdateUserProfile(name, photoURL);
   
   
 })
@@ -37,15 +37,15 @@ createUser(email, password)
 
  }
 
- const handleUpdateUserProfile = (name, photoURL) => {
-    const profile = {
-      displayName: name,
-      photoURL: photoURL
-    }
-    updateUserProfile(profile)
-    .then(() => {})
-    .catch(error => console.error(error));
- }
+//  const handleUpdateUserProfile = (name, photoURL) => {
+//     const profile = {
+//       displayName: name,
+//       photoURL: photoURL
+//     }
+//     updateUserProfile(profile)
+//     .then(() => {})
+//     .catch(error => console.error(error));
+//  }
 
   return (
     <div>
