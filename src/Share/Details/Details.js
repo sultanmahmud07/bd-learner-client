@@ -17,10 +17,15 @@ const Details = () => {
           <Card.Text>
             {details}
           </Card.Text>
+          <Link to='/premium'>
+            <div className='text-end p-5 fw-bold'>
+              <Button variant="warning">GET PREMIUM</Button>
+            </div>
+          </Link>
           <Link to={`/category/${category_id}`}>
-          <Button className='btn w-100' variant="secondary">
-        Block level button
-      </Button>
+            <Button className='btn w-100' variant="secondary">
+              Back To Category
+            </Button>
           </Link>
         </Card.Body>
       </Card>

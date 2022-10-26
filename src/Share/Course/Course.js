@@ -1,10 +1,11 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import CourseSummaryCard from '../CourseSummaryCard/CourseSummaryCard';
 
 const Course = () => {
   const allCourse = useLoaderData();
+ 
   return (
     <div>
      

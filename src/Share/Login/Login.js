@@ -9,8 +9,11 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import { useContext } from 'react';
 import { GoogleAuthProvider } from "firebase/auth";
 import { useState } from 'react';
+import {useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
+  const navigate =useNavigate();
   const [error, setError] =useState('')
   const { googleSignIn,signIn } = useContext(AuthContext)
   const googleProvider = new GoogleAuthProvider()
@@ -28,6 +31,7 @@ const handleSubmit = event =>{
     console.log(user);
     form.reset();
     setError('')
+    navigate('/home')
     
   })
   .catch((error) => {

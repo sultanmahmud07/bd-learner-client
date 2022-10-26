@@ -8,6 +8,8 @@ import Course from "../../Share/Course/Course";
 import Category from "../../Category/Category";
 import Details from "../../Share/Details/Details";
 import Error from "../../Share/Error/Error";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
+import Premium from "../../Share/Premium/Premium";
 
 
 
@@ -37,6 +39,10 @@ export const routes =createBrowserRouter([
         path: '/course/:id',
         element: <Details></Details>,
         loader: ({params}) => fetch(`http://localhost:5000/course/${params.id}`)
+      },
+      {
+        path: '/premium',
+        element: <PrivateRoutes><Premium></Premium></PrivateRoutes>
       }
       
     ]

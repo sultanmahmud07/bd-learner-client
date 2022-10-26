@@ -66,6 +66,7 @@ const Header = () => {
             <NavLink className='mx-3' to="/home">Home</NavLink>
             <NavLink className='mx-3' to="/course">Course</NavLink>
             <NavLink className='mx-3' to="/blog">Blogs</NavLink>
+            <NavLink className='mx-3' to="/premium">Premium</NavLink>
             
             {
               user?.uid ?
