@@ -11,10 +11,10 @@ const Main = () => {
       <Header></Header>
       <Container>
         <Row>
-          <Col lg="4" className='border border-danger'>
+          <Col lg="3" className='border '>
             <LeftSiteNav></LeftSiteNav>
           </Col>
-          <Col lg="8" className='border border-warning'>
+          <Col lg="9" className=''>
            <Outlet></Outlet>
           </Col>
         </Row>

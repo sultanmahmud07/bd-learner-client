@@ -8,7 +8,7 @@ const CourseSummaryCard = ({ course }) => {
   const {_id, title, image_url, details, rating} = course;
   // console.log(course)
   return (
-    <div>
+    <div className='shadow '>
         <Card>
             <Card.Img variant="top" src={image_url} />
             <Card.Body>

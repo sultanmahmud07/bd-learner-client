@@ -8,8 +8,8 @@ const Category = () => {
 
   return (
     <div>
-      <h3>This is category has Course: {categoryCourse.length}!!!</h3>
-    <Row className='row-cols-1 row-cols-lg-2 g-3'>
+      <h3 className='text-success mb-3'>Out Survices Items: {categoryCourse.length}!!!</h3>
+    <Row className='row-cols-1 row-cols-lg-2 g-4 gy-5'>
     {
         categoryCourse.map(course => <CourseSummaryCard
         key={course._id}

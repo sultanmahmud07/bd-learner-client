@@ -1,11 +1,16 @@
 import React from 'react';
+import { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { FaUserCircle } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
+  const {user} =useContext(AuthContext);
+
+  // console.log(user);
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -22,9 +27,17 @@ const Header = () => {
            
           </Nav>
           <Nav className='ms-auto'>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Dank memes
+            <Nav.Link>
+              {user?.displayName}
+            </Nav.Link>
+
+            <Nav.Link>
+             {/* {
+              user.photoURL ?
+              <img src={user?.photoURL}></img>
+              :
+              <FaUserCircle></FaUserCircle>
+             } */}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
@@ -32,7 +45,7 @@ const Header = () => {
       </Container>
     </Navbar>
    
-    <Nav className="m-auto bg-dark py-3 d-none d-lg-block">
+    <Nav className="text-end pe-5 bg-dark py-2 d-none d-lg-block">
             <NavLink className='mx-3' to="/home">Home</NavLink>
             <NavLink className='mx-3' to="/course">Course</NavLink>
             <NavLink className='mx-3' to="/login">Login</NavLink>
