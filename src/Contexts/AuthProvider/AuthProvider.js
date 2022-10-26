@@ -26,6 +26,11 @@ const signIn = (email, password) => {
   return signInWithEmailAndPassword(auth, email, password)
 }
 
+//Update user profiles..
+const updateUserProfile = (profile) => {
+  return updateUserProfile(auth.currentUser, profile);
+}
+
 //Sign Out ...
 const logOut = () =>{
   setLoading(true)
@@ -50,7 +55,16 @@ useEffect( () => {
 }, [])
 
 
-const authInfo = { user, loading, signIn, googleSignIn, logOut, createUser }
+//pass profider value.....
+const authInfo = {
+   user, 
+   loading, 
+   signIn, 
+   updateUserProfile, 
+   googleSignIn, 
+   logOut, 
+   createUser 
+  }
 
   return (
     <AuthContext.Provider value={ authInfo }>

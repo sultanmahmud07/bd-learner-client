@@ -9,8 +9,8 @@ import Header from '../Header/Header';
 
 const Register = () => {
 const [error, setError] =useState('')
-const {createUser} =useContext(AuthContext)
-
+const {createUser, updateUserProfile} =useContext(AuthContext)
+console.log(updateUserProfile)
  const handleSubmit = (event) =>{
   event.preventDefault();
   const form = event.target;
@@ -18,7 +18,7 @@ const {createUser} =useContext(AuthContext)
   const email =form.email.value;
   const photoURL =form.photoURL.value;
   const password =form.password.value;
-  // console.log(name, email, photoURL, password);
+  console.log(name, email, photoURL, password);
 
 createUser(email, password)
 .then(result => {
@@ -26,6 +26,7 @@ createUser(email, password)
   form.reset()
   console.log(user)
   setError('')
+  handleUpdateUserProfile(name, photoURL);
   
   
 })
@@ -34,6 +35,16 @@ createUser(email, password)
   setError(error.message)
 })
 
+ }
+
+ const handleUpdateUserProfile = (name, photoURL) => {
+    const profile = {
+      displayName: name,
+      photoURL: photoURL
+    }
+    updateUserProfile(profile)
+    .then(() => {})
+    .catch(error => console.error(error));
  }
 
   return (

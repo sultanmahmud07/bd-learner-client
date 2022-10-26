@@ -9,7 +9,7 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import { useContext } from 'react';
 import { GoogleAuthProvider } from "firebase/auth";
 import { useState } from 'react';
-import {useLocation, useNavigate } from 'react-router-dom';
+import {Link, useLocation, useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
@@ -86,7 +86,8 @@ const handleSubmit = event =>{
             <Button onClick={handleGoogleSignIn} variant="outline-warning"><FaGoogle></FaGoogle> Google</Button>
             <Button variant="outline-primary"><FaFacebookF></FaFacebookF> Facefook</Button>
           </ButtonGroup>
-          <Button className='bg-success w-100 fs-5' variant="primary" type="submit">
+          <span>Go to <Link to='/register'>Register</Link></span>
+          <Button className='bg-success my-3 w-100 fs-5' variant="primary" type="submit">
             Login Now
           </Button>
         </Form>
