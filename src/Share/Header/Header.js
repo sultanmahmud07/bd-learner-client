@@ -8,6 +8,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import { Col, Image, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
+import '../../Common/Common.css';
 
 const Header = () => {
   const {user, logOut} =useContext(AuthContext);
@@ -22,12 +23,12 @@ const Header = () => {
   // console.log(user);
   return (
     <div>
-      <Navbar className='m-0 p-0' collapseOnSelect expand="lg" bg="success" variant="dark">
+      <Navbar className='m-0 p-0 header-color' collapseOnSelect expand="lg"  variant="dark">
       <Container>
-        <Navbar.Brand >BD Learner</Navbar.Brand>
+        <Navbar.Brand className='margin-set py-0' ><span className='logo'>BD</span> Learner</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="m-auto d-lg-none">
+          <Nav className="m-auto d-lg-none header-color-2">
             <NavLink to="/home">Home</NavLink>
             <NavLink to="/course">Course</NavLink>
             <NavLink to="/login">Login</NavLink>
@@ -35,9 +36,9 @@ const Header = () => {
            
            
           </Nav>
-          <Nav className='ms-auto'>
+          <Nav className='ms-auto nav-m'>
           <Button className='fs-6' style={{height: '30px'}} variant="outline-warning">Dark</Button>
-            <Nav.Link>
+            <Nav.Link className='py-0'>
               {
                 user?.displayName ?
                 <p>{user?.displayName}</p>
@@ -62,7 +63,7 @@ const Header = () => {
       </Container>
     </Navbar>
    
-    <Nav className="text-end shadow pe-5 bg-dark pb-2 pt-0 mt-0 d-none d-lg-block">
+    <Nav className="text-end shadow pe-5 header-color-2 pb-2 pt-0 mt-0 d-none d-lg-block">
             <NavLink className='mx-3' to="/home">Home</NavLink>
             <NavLink className='mx-3' to="/course">Course</NavLink>
             <NavLink className='mx-3' to="/blog">Blogs</NavLink>

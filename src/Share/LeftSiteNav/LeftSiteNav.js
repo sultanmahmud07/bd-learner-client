@@ -12,12 +12,12 @@ const LeftSiteNav = () => {
     .then(data => setCategories(data));
   }, [])
   return (
-    <div>
-      <h3>All Courses {categories.length}</h3>
+    <div className='left-site'>
+      <h3 className='course-title'>All Courses </h3>
      
-      <ul>
+      <ul className='left-site-ul'>
       {
-        categories.map(category => <li key={category.id}><Link to={`/category/${category.id}`}>{category.name}</Link></li>)
+        categories.map(category => <li key={category.id}><Link className='py-lg-3' to={`/category/${category.id}`}>{category.name}</Link></li>)
       }
         {/* <li><Link to='/html'>HTML</Link></li>
         <li><Link to='/css'>CSS</Link></li>

@@ -10,7 +10,7 @@ const Course = () => {
     <div>
      
       <h2>This is course Home: {allCourse.length}</h2>
-      <Row className='row-cols-1 row-cols-lg-2 g-3'>
+      <Row className='row-cols-1 row-cols-lg-2 g-4'>
         <>
           {
             allCourse.map(course => <CourseSummaryCard

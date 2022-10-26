@@ -12,7 +12,7 @@ const CourseSummaryCard = ({ course }) => {
         <Card>
             <Card.Img variant="top" src={image_url} />
             <Card.Body>
-              <Card.Title className='text-start'>{title}</Card.Title>
+              <Card.Title className='single-card-title text-start'>{title}</Card.Title>
               <Card.Text className='text-start'>
                {
                 details.length > 100? <span>{details.slice(0, 100) + '...'} <Link to={`/course/${_id}`}>Read more</Link></span> : <span>{details}</span>
