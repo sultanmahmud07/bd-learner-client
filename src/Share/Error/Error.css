@@ -1,0 +1,17 @@
+.error-box{
+  width: 100%;
+  margin: auto;
+  margin-top: 20vw;
+}
+.num{
+  color: red;
+  font-size: 30px;
+  font-weight: bold;
+}
+.not-f{
+  color: rgb(7, 73, 7);
+  font-weight: 500;
+}
+.ops{
+  color: orangered;
+}
