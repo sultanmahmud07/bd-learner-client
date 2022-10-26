@@ -9,14 +9,16 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import { useContext } from 'react';
 import { GoogleAuthProvider } from "firebase/auth";
 import { useState } from 'react';
-import {useNavigate } from 'react-router-dom';
+import {useLocation, useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
   const navigate =useNavigate();
   const [error, setError] =useState('')
   const { googleSignIn,signIn } = useContext(AuthContext)
-  const googleProvider = new GoogleAuthProvider()
+  const googleProvider = new GoogleAuthProvider();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
 
 //Login handler..
 const handleSubmit = event =>{
@@ -24,6 +26,7 @@ const handleSubmit = event =>{
   const form =event.target;
   const email =form.email.value;
   const password =form.password.value;
+
   // console.log(email, password)
   signIn(email, password)
   .then(result => {
@@ -31,11 +34,11 @@ const handleSubmit = event =>{
     console.log(user);
     form.reset();
     setError('')
-    navigate('/home')
+   navigate(from, {replace: true});
     
   })
   .catch((error) => {
-    const errorCode = error.code;
+    
     const errorMessage = error.message;
     setError(errorMessage)
     // ..
@@ -48,6 +51,7 @@ const handleSubmit = event =>{
       .then(result => {
         const user = result.user;
         console.log(user);
+        navigate(from, {replace: true});
       })
       .catch(error => console.error(error))
   };
