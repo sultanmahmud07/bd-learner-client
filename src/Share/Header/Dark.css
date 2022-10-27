@@ -1,42 +1,11 @@
-* {
-  box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
-}
+
 #root {
   height: 100%;
 }
 
-html,
-body {
-  min-height: 100vh;
-  height: 100%;
 
-}
 
-span {
-  font-size: 40px
-}
 
-.dark-mode {
-  background-color: #1a1919;
-  color: #999;
-  height: 100%;
-  transition: background-color 0.25s ease-in-out;
-}
-
-.light-mode {
-  background-color: #fff;
-  color: #333;
-  height: 100%;
-  transition: background-color 0.25s ease-in-out;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center
-}
 
 .switch {
   position: relative;
@@ -126,4 +95,5 @@ input:checked + .slider:before {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-right: 50px;
 }

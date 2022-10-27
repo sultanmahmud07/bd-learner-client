@@ -34,7 +34,7 @@ const Blog = () => {
               <h2 className="q-title">2.2 What other options do you have to implement authentication without firebass?</h2>
             </div>
           </div>
-          <p className='q-p'><span className='ans'>Ans-2.2:</span> <h5 className='hstayle'>Other options.</h5> </p>
+          {/* <p className='q-p'><span className='ans'>Ans-2.2:</span> <h5 className='hstayle'>Other options.</h5> </p> */}
           <ul>
             <li>Auth0</li>
             <li>MongoDB</li>

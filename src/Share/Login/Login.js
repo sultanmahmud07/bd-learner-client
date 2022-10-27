@@ -11,6 +11,8 @@ import { FacebookAuthProvider, GithubAuthProvider, GoogleAuthProvider } from "fi
 import { useState } from 'react';
 import {Link, useLocation, useNavigate } from 'react-router-dom';
 import Footer from '../Footer/Footer';
+import Swal from 'sweetalert2';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const Login = () => {
@@ -38,6 +40,11 @@ const handleSubmit = event =>{
     form.reset();
     setError('')
    navigate(from, {replace: true});
+   Swal.fire(
+    'Login Success!',
+    'Welcome to out course!',
+    'success'
+  )
     
   })
   .catch((error) => {
@@ -55,6 +62,11 @@ const handleSubmit = event =>{
         const user = result.user;
         console.log(user);
         navigate(from, {replace: true});
+        Swal.fire(
+          'Login Success!',
+          'Welcome to out course!',
+          'success'
+        )
       })
       .catch(error => console.error(error))
   };
@@ -66,7 +78,15 @@ const handleSubmit = event =>{
       const user = result.user;
       console.log(user)
     })
-    .catch(error => console.error(error))
+    .catch(error => {
+      console.error(error)
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+        footer: '<a href="">Why do I have this issue?</a>'
+      })
+    })
   }
 
   return (

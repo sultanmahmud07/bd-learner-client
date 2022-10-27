@@ -3,17 +3,19 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import './Register.css';
+import Swal from 'sweetalert2';
 // import './Dark.css';
 
 const Register = () => {
 const [error, setError] =useState('')
 const {createUser, updateUserProfile} =useContext(AuthContext)
 // console.log(updateUserProfile)
+const navigate =useNavigate()
  const handleSubmit = (event) =>{
   event.preventDefault();
   const form = event.target;
@@ -29,6 +31,13 @@ createUser(email, password)
   form.reset()
   console.log(user)
   setError('')
+  navigate('/home')
+  Swal.fire(
+    'Register Success!',
+    'Welcome to out course!',
+    'success'
+  )
+  
   // handleUpdateUserProfile(name, photoURL);
   
   
