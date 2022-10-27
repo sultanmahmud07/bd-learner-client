@@ -56,8 +56,25 @@ text-decoration: none;
 .left-site-ul li a:hover{
   color: black;
 }
+.but-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .single-card-title{
   /* border-bottom: 2px solid #046c04; */
+}
+.download-btn{
+  background-color: #046c04;
+  width: 170px;
+  height: 40px;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.download-btn:hover{
+  background-color: blue;
 }
 
 
