@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap';
 const Premium = () => {
   return (
     <div>
-      <h2 className='text-center text-warning p-4'>This is Premium!!</h2>
+      <h2 className='text-center text-warning p'>This is Premium!!</h2>
 
       <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-4'>
 
@@ -26,7 +26,7 @@ const Premium = () => {
             <Card.Body>
               <Card.Title>Secondary Card Title</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
+                Some quick example ami ja build on the card title and make up the
                 bulk of the card's content.
               </Card.Text>
             </Card.Body>
