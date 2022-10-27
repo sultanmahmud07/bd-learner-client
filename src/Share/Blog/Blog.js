@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import './Blog.css';
 
@@ -13,29 +14,61 @@ const Blog = () => {
         <div className="single-question">
           <div className="title-wrapper">
             <div >
-              <h2 className="q-title">1. what is the purpose of react router?</h2>
+              <h2 className="q-title">1. What is CORS in web API?</h2>
             </div>
           </div>
-          <p className='q-p'><span className='ans'>Ans:</span> ReactJS Router is mainly used for developing Single Page Web Applications. React Router is used to define multiple routes in the application. When a user types a specific URL into the browser, and if this URL path matches any 'route' inside the router file, the user will be redirected to that particular route.</p>
+          <p className='q-p'><span className='ans'>Ans:</span> Cross-origin resource sharing (CORS) is a browser security feature that restricts cross-origin HTTP requests that are initiated from scripts running in the browser. If your REST API's resources receive non-simple cross-origin HTTP requests, you need to enable CORS support.</p>
         </div>
         <div className="single-question">
           <div className="title-wrapper">
             <div>
-              <h2 className="q-title">2. how does context api work?</h2>
+              <h2 className="q-title">2.1 Why are you using firebase?</h2>
             </div>
           </div>
-          <p className='q-p'><span className='ans'>Ans:</span> The React Context API is a way for a React app to effectively produce global variables that can be passed around. This is the alternative to "prop drilling" or moving props from grandparent to child to parent, and so on. Context is also touted as an easier, lighter approach to state management using Redux.</p>
+          <p className='q-p'><span className='ans'>Ans-2.1:</span> The Firebase Realtime Database lets you build rich, collaborative applications by allowing secure access to the database directly from client-side code. Data is persisted locally, and even while offline, realtime events continue to fire, giving the end user a responsive experience.</p>
+        </div>
+
+        <div className="single-question">
+          <div className="title-wrapper">
+            <div>
+              <h2 className="q-title">2.2 What other options do you have to implement authentication without firebass?</h2>
+            </div>
+          </div>
+          <p className='q-p'><span className='ans'>Ans-2.2:</span> <h5 className='hstayle'>Other options.</h5> </p>
+          <ul>
+            <li>Auth0</li>
+            <li>MongoDB</li>
+            <li>Passport</li>
+            <li>Okta</li>
+          </ul>
+        </div>
+
+        <div className="single-question">
+          <div className="title-wrapper">
+            <div>
+              <h2 className="q-title">3. How does the private route work?</h2>
+            </div>
+          </div>
+          <p className='q-p'><span className='ans'>Ans:</span> The private route component is similar to the public route, the only change is that redirect URL and authenticate condition. If the user is not authenticated he will be redirected to the login page and the user can only access the authenticated routes If he is authenticated (Logged in).</p>
+          
         </div>
         <div className="single-question">
           <div className="title-wrapper">
             <div>
-              <h2 className="q-title">3. what is useRef and how does work useref?</h2>
+              <h2 className="q-title">4. What is Node? How does Node work</h2>
             </div>
           </div>
-          <p className='q-p'><span className='ans'>Ans:</span> The useRef Hook allows you to persist values between renders. It can be used to store a mutable value that does not cause a re-render when updated. It can be used to access a DOM element directly.</p>
-          <p className='q-p'> UseRef returns a mutable ref object whose .current property is initialized to the passed argument ( initialValue ). The returned object will persist for the full lifetime of the component. Essentially, useRef is like a “box” that can hold a mutable value in its .current property.</p>
+          <ul>
+            <li>Node.js is an open source server environment</li>
+            <li>Node.js is free</li>
+            <li>Node.js runs on various platforms (Windows, Linux, Unix, Mac OS X, etc.)</li>
+            <li>Node.js uses JavaScript on the server</li>
+          </ul>
+          <p className='q-p'><span className='ans'>Ans:</span> Node. js is an event loop single-threaded language. It can handle concurrent requests with a single thread without blocking it for one request. Non-blocking I/o: Non-blocking i/o means working with multiple requests without blocking the thread for a single request.</p>
+          
         </div>
       </div>
+      <Footer></Footer>
 
     </div>
   );

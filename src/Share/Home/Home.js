@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import Header from '../Header/Header';
 import Img from '../../Assat/meeting-tipps-erfolgreich-1200x630.jpg';
 import './Home.css';
+import Footer from '../Footer/Footer';
 
 const Home = () => {
   return (
     <div>
       <Header></Header>
-      <div className="home-page">
+      <div className="home-page mt-5">
         <div className="container d-flex flex-column flex-sm-column flex-xl-row">
           <div className="left-img w-100 w-lg-50">
             <img className='img-fluid' src={Img} alt="" />
@@ -26,6 +27,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

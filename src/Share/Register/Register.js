@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
 const Register = () => {
@@ -92,6 +93,7 @@ createUser(email, password)
           </div>
         </Form>
       </div>
+      {/* <Footer></Footer> */}
     </div>
   );
 };

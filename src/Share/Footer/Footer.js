@@ -2,8 +2,8 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div>
-      <h6>This i footer</h6>
+    <div className='bg-success py-5 text-center text-white mt-3'>
+      <p>Copyright © 2022 BD Learner.com</p>
     </div>
   );
 };

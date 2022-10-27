@@ -10,6 +10,7 @@ import { useContext } from 'react';
 import { GoogleAuthProvider } from "firebase/auth";
 import { useState } from 'react';
 import {Link, useLocation, useNavigate } from 'react-router-dom';
+import Footer from '../Footer/Footer';
 
 
 const Login = () => {
@@ -60,7 +61,7 @@ const handleSubmit = event =>{
     <div>
       <Header></Header>
 
-      <div className='w-25 shadow pt-5 m-auto border rounded mt-3 p-3'>
+      <div className='w-25 shadow pt-5 m-auto border rounded mt-3 p-3 mb-5'>
         <h1 className='text-center text-success'>Login Now</h1>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -92,6 +93,7 @@ const handleSubmit = event =>{
           </Button>
         </Form>
       </div>
+      {/* <Footer></Footer> */}
     </div>
   );
 };

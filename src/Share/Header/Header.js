@@ -9,6 +9,7 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import { Col, Image, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import '../../Common/Common.css';
+import { FaPiggyBank } from 'react-icons/fa';
 
 const Header = () => {
   const {user, logOut} =useContext(AuthContext);
@@ -67,7 +68,7 @@ const Header = () => {
             <NavLink className='mx-3' to="/home">Home</NavLink>
             <NavLink className='mx-3' to="/course">Course</NavLink>
             <NavLink className='mx-3' to="/blog">Blogs</NavLink>
-            <NavLink className='mx-3' to="/premium">Premium</NavLink>
+            <NavLink className='mx-3' to="/premium">Premium<FaPiggyBank className='text-warning'></FaPiggyBank></NavLink>
             
             {
               user?.uid ?
