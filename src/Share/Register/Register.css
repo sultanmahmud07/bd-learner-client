@@ -1,0 +1,45 @@
+@media screen and (max-width:765px) {
+  .ragister{
+    /* background-color: tomato !important; */
+    width: 90%;
+
+  }
+  .login{
+    width: 90%;
+  }
+  .btn-container{
+    display: flex;
+    justify-content: space-between;
+  }
+  .home-btn{
+    margin: 0px;
+  }
+  }
+
+  @media screen and (min-width: 767px) and (max-width:1200px) {
+    .ragister{
+      /* background-color: green !important; */
+      width: 40%;
+  
+    }
+    .login{
+      width: 40%;
+    }
+    .home-btn{
+      margin-left: 20px;
+    }
+    }
+
+    @media screen and (min-width:1201px) {
+      .ragister{
+        /* background-color: tomato !important; */
+        width: 30%;
+    
+      }
+      .login{
+        width: 30%;
+      }
+      .home-btn{
+        margin-left: 20px;
+      }
+    }

@@ -20,7 +20,7 @@ const Home = () => {
             
             <div className="btn-container ">
               <button className='home-btn mt-2 ' id='home-btn1'><Link to='/course'>Course</Link></button>
-              <button className='home-btn ms-2 mt-2' id='home-btn2'><Link to='/blog'>Blog</Link></button>
+              <button className='home-btn mt-2' id='home-btn2'><Link to='/blog'>Blog</Link></button>
               
               
             </div>

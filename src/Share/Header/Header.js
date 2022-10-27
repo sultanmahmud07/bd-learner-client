@@ -10,8 +10,11 @@ import { Col, Image, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import '../../Common/Common.css';
 import { FaPiggyBank } from 'react-icons/fa';
+import { useState } from 'react';
+import './Dark.css';
 
 const Header = () => {
+  const [darkmood, setDarkmood] = useState(false);
   const {user, logOut} =useContext(AuthContext);
 
   const handleLogOut = () => {
@@ -19,6 +22,9 @@ const Header = () => {
     .then( () => {})
     .catch(error => console.error(error))
   }
+
+
+
 
 
   // console.log(user);
@@ -38,7 +44,15 @@ const Header = () => {
            
           </Nav>
           <Nav className='ms-auto nav-m'>
-          <Button className='fs-6' style={{height: '30px'}} variant="outline-warning">Dark</Button>
+          <div className='dark-container'> 
+            <span className='light-s'>Light</span>
+          <label className='switch'>
+            <input type='checkbox'></input>
+            <span className='slider round'></span>
+          </label>
+          <span className='dark-s'>Dark</span>
+            
+          </div>
             <Nav.Link className='py-0'>
               {
                 user?.displayName ?

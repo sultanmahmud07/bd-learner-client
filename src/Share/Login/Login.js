@@ -7,7 +7,7 @@ import { FaFacebookF } from 'react-icons/fa';
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import { useContext } from 'react';
-import { GoogleAuthProvider } from "firebase/auth";
+import { FacebookAuthProvider, GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import { useState } from 'react';
 import {Link, useLocation, useNavigate } from 'react-router-dom';
 import Footer from '../Footer/Footer';
@@ -16,8 +16,10 @@ import Footer from '../Footer/Footer';
 const Login = () => {
   const navigate =useNavigate();
   const [error, setError] =useState('')
-  const { googleSignIn,signIn } = useContext(AuthContext)
+  const { googleSignIn,githubSignIn, signIn } = useContext(AuthContext)
   const googleProvider = new GoogleAuthProvider();
+  const facebookProvider = new FacebookAuthProvider();
+  const githubProvider = new GithubAuthProvider();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
 
@@ -57,11 +59,21 @@ const handleSubmit = event =>{
       .catch(error => console.error(error))
   };
 
+  //sign in with facebook handler....
+  const handleFacebookSignIn = () => {
+    githubSignIn(githubProvider)
+    .then(result => {
+      const user = result.user;
+      console.log(user)
+    })
+    .catch(error => console.error(error))
+  }
+
   return (
     <div>
       <Header></Header>
 
-      <div className='w-25 shadow pt-5 m-auto border rounded mt-3 p-3 mb-5'>
+      <div className='login shadow pt-5 m-auto border rounded mt-3 p-3 mb-5'>
         <h1 className='text-center text-success'>Login Now</h1>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -85,7 +97,7 @@ const handleSubmit = event =>{
        
           <ButtonGroup className='d-block my-3 my-2 w-100 d-flex justify-content-between'>
             <Button onClick={handleGoogleSignIn} variant="outline-warning"><FaGoogle></FaGoogle> Google</Button>
-            <Button variant="outline-primary"><FaFacebookF></FaFacebookF> Facefook</Button>
+            <Button onClick={handleFacebookSignIn} variant="outline-primary"> Facefook</Button>
           </ButtonGroup>
           <span>Go to <Link to='/register'>Register</Link></span>
           <Button className='bg-success my-3 w-100 fs-5' variant="primary" type="submit">

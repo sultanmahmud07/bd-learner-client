@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
+import './Register.css';
+// import './Dark.css';
 
 const Register = () => {
 const [error, setError] =useState('')
@@ -51,7 +53,7 @@ createUser(email, password)
   return (
     <div>
       <Header></Header>
-      <div className='w-50 shadow pt-5 m-auto border rounded mt-3 p-5'>
+      <div className='ragister shadow pt-5 m-auto border rounded mt-3 p-5'>
         <h1 className='text-center text-success'>Register Now</h1>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">

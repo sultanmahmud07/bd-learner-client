@@ -19,6 +19,11 @@ const googleSignIn = (provider) =>{
   setLoading(true)
   return signInWithPopup(auth, provider);
 }
+//Sign In with Github ....
+const githubSignIn = (provider) =>{
+  // setLoading(true)
+  return signInWithPopup(auth, provider);
+}
 
 //Sign in with email and password..
 const signIn = (email, password) => {
@@ -63,7 +68,8 @@ const authInfo = {
    updateUserProfile, 
    googleSignIn, 
    logOut, 
-   createUser 
+   createUser,
+   githubSignIn 
   }
 
   return (
