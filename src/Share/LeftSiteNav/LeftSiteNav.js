@@ -7,7 +7,7 @@ const LeftSiteNav = () => {
   const [categories, setCategories] = useState([]);
 //  console.log(category.id);
   useEffect( () =>{
-    fetch('http://localhost:5000/course-categories')
+    fetch('https://bd-learner-server.vercel.app/course-categories')
     .then(res => res.json())
     .then(data => setCategories(data));
   }, [])

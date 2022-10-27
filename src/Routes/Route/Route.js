@@ -23,22 +23,22 @@ export const routes =createBrowserRouter([
       {
         path: '/',
         element: <Course></Course>,
-        loader: () => fetch('http://localhost:5000/course')
+        loader: () => fetch('https://bd-learner-server.vercel.app/course')
       },
       {
         path: '/course',
         element: <Course></Course>,
-        loader: () => fetch('http://localhost:5000/course')
+        loader: () => fetch('https://bd-learner-server.vercel.app/course')
       },
       {
         path: '/category/:id',
         element: <Category></Category>,
-        loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`)
+        loader: ({params}) => fetch(`https://bd-learner-server.vercel.app/category/${params.id}`)
       },
       {
         path: '/course/:id',
         element: <Details></Details>,
-        loader: ({params}) => fetch(`http://localhost:5000/course/${params.id}`)
+        loader: ({params}) => fetch(`https://bd-learner-server.vercel.app/course/${params.id}`)
       },
       {
         path: '/premium',
